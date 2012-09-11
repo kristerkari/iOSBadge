@@ -1,5 +1,5 @@
 /*! iOSBadge - v0.1.0
-* http://krister.fi/iosbadge/
+* http://kristerkari.github.com/iOSBadge/
 * Copyright (c) 2012 Krister Kari; Licensed MIT */
 
 
