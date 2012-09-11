@@ -1,6 +1,6 @@
 ## Plugin options
 
-With the Javascript version the plugin options can be configured when invoking the plugin, e.g. `new IOSBadge(element, { size: 20 });`. With the jQuery/Zepto versio you can use the plugin options instead of the Javascript version's chainable methods.
+With the Javascript version the plugin options can be configured when invoking the plugin, e.g. `new IOSBadge(element, { size: 20 });`. With the jQuery/Zepto version you can use the plugin options instead of the chainable methods of the Javascript version.
 
 <table>
 <thead><tr>
