@@ -1,0 +1,111 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title iOSBadge demo
+    link(rel="stylesheet", href="css/bootstrap/bootstrap.css")
+    link(rel="stylesheet", href="css/bootstrap/responsive.css")
+    link(rel="stylesheet", href="../dist/iosbadge.css")
+    link(rel="stylesheet", href="css/demo.css")
+    script(src="js/modernizr.min.js")
+  body(data-spy="scroll", data-target=".sidebar")
+    a(href="https://github.com/kristerkari/iOSBadge/")
+      img(style="position: fixed; top: 0; right: 30px; border: 0;", src="https://github.com/jamesflorentino/fork-ribbons/raw/master/ribbons/blue-white.png", alt="Fork me on GitHub")
+
+    div.container
+      div.row
+        div.span3.sidebar
+          p
+          div#side-nav.side-nav
+            h1 iOSBadge
+            ul.nav.nav-list.demo-nav
+              li
+                a(href="#home")
+                  i.icon-chevron-right
+                  | Home
+              li
+                a(href="#demo")
+                  i.icon-chevron-right
+                  | Demo
+              li
+                a(href="#howto")
+                  i.icon-chevron-right
+                  | How to use it
+              li
+                a(href="#methods")
+                  i.icon-chevron-right
+                  | Plugin methods
+              li
+                a(href="#options")
+                  i.icon-chevron-right
+                  | Plugin options
+              li
+                a(href="#browsersupport")
+                  i.icon-chevron-right
+                  | Browser support
+              li
+                a(href="#build")
+                  i.icon-chevron-right
+                  | Build &amp; customize
+              li
+                a(href="#download")
+                  i.icon-chevron-right
+                  | Download
+
+        div.span9
+          div#home
+          !{intro}
+          h2#demo Demo
+          div#badge-icon.badge-icon
+            div.shine
+          h4 Set badge value to:
+          div.btn-group#demo-val
+            button.btn.active 1
+            button.btn 3
+            button.btn +4
+            button.btn -3
+            button.btn new
+          h4 Set badge size to:
+          div.btn-group#demo-size
+            button.btn 20
+            button.btn 22
+            button.btn.active 24
+            button.btn 26
+            button.btn 28            
+            button.btn 30
+            button.btn 32
+            button.btn 34
+            button.btn 36
+          h4 Set badge theme to:
+          div.btn-group#demo-theme
+            button.btn.active red
+            button.btn blue
+            button.btn green
+            button.btn grey
+            button.btn ios
+          h4 Set badge position to:
+          div.btn-group#demo-pos
+            button.btn top-left
+            button.btn.active top-right
+            button.btn bottom-left
+            button.btn bottom-right
+          div#howto
+          !{howto}
+          div#methods
+          !{plugin_methods}
+          div#options
+          !{plugin_options}
+          div#browsersupport
+          !{browser_support}
+          div#build
+          !{build}
+          h2#download Download a iOSBadge release
+          p All iOSBadge code and releases are hosted by GitHub.
+          a(href="https://github.com/kristerkari/iOSBadge/tags") Click here to Download a iOSBage release from GitHub.
+    script(src="js/jquery.min.js")
+    script(src="js/prettify.js")
+    script(src="js/bootstrap/bootstrap-affix.js")
+    script(src="js/bootstrap/bootstrap-scrollspy.js")
+    script(src="../dist/iosbadge.js")
+    script(src="js/demo.js")
+      

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iOSBadge demo</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap/responsive.css">
+    <link rel="stylesheet" href="../dist/iosbadge.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/modernizr.min.js"></script>
+  </head>
+  <body data-spy="scroll" data-target=".sidebar"><a href="https://github.com/kristerkari/iOSBadge/"><img style="position: fixed; top: 0; right: 30px; border: 0;" src="https://github.com/jamesflorentino/fork-ribbons/raw/master/ribbons/blue-white.png" alt="Fork me on GitHub"></a>
+    <div class="container">
+      <div class="row">
+        <div class="span3 sidebar">
+          <p></p>
+          <div id="side-nav" class="side-nav">
+            <h1>iOSBadge</h1>
+            <ul class="nav nav-list demo-nav">
+              <li><a href="#home"><i class="icon-chevron-right"></i>Home</a></li>
+              <li><a href="#demo"><i class="icon-chevron-right"></i>Demo</a></li>
+              <li><a href="#howto"><i class="icon-chevron-right"></i>How to use it</a></li>
+              <li><a href="#methods"><i class="icon-chevron-right"></i>Plugin methods</a></li>
+              <li><a href="#options"><i class="icon-chevron-right"></i>Plugin options</a></li>
+              <li><a href="#browsersupport"><i class="icon-chevron-right"></i>Browser support</a></li>
+              <li><a href="#build"><i class="icon-chevron-right"></i>Build &amp; customize</a></li>
+              <li><a href="#download"><i class="icon-chevron-right"></i>Download</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="span9">
+          <div id="home"></div><h1>iOSBadge - iOS style notification badges for modern browsers</h1>
+<p>iOSBadge is a small Javascript plugin that allows you to use iOS style notification badges on your icons or menu items in your website or web application.
+
+</p>
+<h2>Big in features, tiny in file size</h2>
+<p>iOSBadge has a lot of methods and options included by default. It is also really small in filesize: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use it like a regular jQuery plugin if you want to.
+
+</p>
+<h2>Modern components - for modern browsers</h2>
+<p>iOSBadge is built using <a href="http://coffeescript.org/">Coffeescript</a> and <a href="http://compass-style.org/">Compass</a> (<a href="http://sass-lang.com/">Sass</a>) (<em>..and <a href="http://jade-lang.com/">Jade</a> is used for HTML templates</em>). Using Sass is important to have CSS math to generate all the different sized badges, and with Compass all of the CSS vendor prefixes can be included automatically. The plugin uses CSS3 properties and works in modern browsers only, so no oldIE support is included.</p>
+
+          <h2 id="demo">Demo</h2>
+          <div id="badge-icon" class="badge-icon">
+            <div class="shine"></div>
+          </div>
+          <h4>Set badge value to:</h4>
+          <div id="demo-val" class="btn-group">
+            <button class="btn active">1</button>
+            <button class="btn">3</button>
+            <button class="btn">+4</button>
+            <button class="btn">-3</button>
+            <button class="btn">new</button>
+          </div>
+          <h4>Set badge size to:</h4>
+          <div id="demo-size" class="btn-group">
+            <button class="btn">20</button>
+            <button class="btn">22</button>
+            <button class="btn active">24</button>
+            <button class="btn">26</button>
+            <button class="btn">28            </button>
+            <button class="btn">30</button>
+            <button class="btn">32</button>
+            <button class="btn">34</button>
+            <button class="btn">36</button>
+          </div>
+          <h4>Set badge theme to:</h4>
+          <div id="demo-theme" class="btn-group">
+            <button class="btn active">red</button>
+            <button class="btn">blue</button>
+            <button class="btn">green</button>
+            <button class="btn">grey</button>
+            <button class="btn">ios</button>
+          </div>
+          <h4>Set badge position to:</h4>
+          <div id="demo-pos" class="btn-group">
+            <button class="btn">top-left</button>
+            <button class="btn active">top-right</button>
+            <button class="btn">bottom-left</button>
+            <button class="btn">bottom-right</button>
+          </div>
+          <div id="howto"></div><h2>How to use it</h2>
+<h3>1. Link to the plugin files on your page</h3>
+<p>First link to the stylesheet inside your head element:
+
+</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;iosbadge.css&quot;&gt;</code></pre>
+<p>...and then to the Javascript file before your closing <code>&lt;/body&gt;</code> tag:
+
+</p>
+<pre><code>&lt;script src=&quot;iosbadge.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<h3>2. Attach the badge to an element with plain Javascript, jQuery or Zepto</h3>
+<p>Using Javascript:
+
+</p>
+<pre><code>var icon = document.getElementById(&#39;icon&#39;);
+var badge = new IOSBadge(icon, { theme: &#39;ios&#39;, size: 22 });</code></pre>
+<p>With the Javascript version you are able to use chaining with most of the methods (notice that this is not possible with the jQuery version), e.g.
+
+</p>
+<pre><code>badge.hide().setContent(1).increaseBy(7).setTheme(&#39;green&#39;).show();</code></pre>
+<p>Using jQuery or Zepto*:
+
+</p>
+<pre><code>$(&quot;#icon&quot;).iosbadge({ theme: &#39;ios&#39;, size: 22 });</code></pre>
+<p>* If you use Zepto, you need to build a custom version that has the <a href="https://github.com/madrobby/zepto#zepto-modules">data module</a></p>
+
+          <div id="methods"></div><h2>Public methods for the Javascript version</h2>
+<p>You can use the plugin methods after you have initialized the plugin.
+
+</p>
+<table>
+<thead><tr>
+  <th>Plugin method</th> <th>Description</th>
+</tr></thead>
+<tbody>
+  <tr>
+    <th>getContent()</th>
+    <td>
+      Returns the current content that is set for the badge. Not chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>setContent(content)</th>
+    <td>
+      Set the content of your badge. Your content can be a <code>Number</code> or a <code>String</code> e.g. <code>.setContent(2)</code>. Increase or decrease your current badge number by passing a <code>+</code> or <code>-</code> prefixed number in a string e.g. <code>.setContent(&#39;+7&#39;)</code>. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>setPosition(position)</th>
+    <td>
+      Set the position of your badge. Options are: <code>&#39;top-left&#39;</code>, <code>&#39;top-right&#39;</code>, <code>&#39;bottom-left&#39;</code> or <code>&#39;bottom-right&#39;</code>. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>setTheme(theme)</th>
+    <td>
+      Set the theme of your badge. Default themes are: <code>&#39;red&#39;</code>, <code>&#39;blue&#39;</code>, <code>&#39;green&#39;</code>, <code>&#39;grey&#39;</code> and <code>&#39;ios&#39;</code>. Themes can be configured in the <code>iosbadge.scss</code> file and then built with the included build tool. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>setSize(size)</th>
+    <td>
+      Set the size of your badge. Sizes can be configured in the &#39;iosbadge.scss&#39; file and then built with the included build tool. Available default sizes are: <code>20</code>, <code>22</code>, <code>24</code>, <code>26</code>, <code>28</code>, <code>30</code>, <code>32</code>, <code>34</code> and <code>36</code>. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>decreaseBy(amount)</th>
+    <td>
+      Decrease the current number in your badge. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>increaseBy(amount)</th>
+    <td>
+      Increase the current number in your badge. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>hide()</th>
+    <td>
+      Hide your badge element. Chainable.
+    </td>
+  </tr>
+  <tr>
+    <th>show()</th>
+    <td>
+      Show your badge element. Chainable.
+    </td>
+  </tr>
+</tbody>
+</table>
+          <div id="options"></div><h2>Plugin options</h2>
+<p>With the Javascript version the plugin options can be configured when invoking the plugin, e.g. <code>new IOSBadge(element, { size: 20 });</code>. With the jQuery/Zepto versio you can use the plugin options instead of the Javascript version&#39;s chainable methods.
+
+</p>
+<table>
+<thead><tr>
+  <th>Plugin&nbsp;option</th> <th>Description</th> <th>Default&nbsp;value</th>
+</tr></thead>
+<tbody>
+  <tr>
+    <th>content</th>
+    <td>
+      Set the content of your badge. Content can be a number or a string. Increase or decrease your current badge number by passing a <code>+</code> or <code>-</code> prefixed number in a string e.g. <code>.setContent(&#39;+7&#39;)</code>
+    </td>
+    <td>
+      <code>1</code>
+    </td>
+  </tr>
+  <tr>
+    <th>size</th>
+    <td>
+      Set the size of your badge. Available default sizes are: <code>20</code>, <code>22</code>, <code>24</code>, <code>26</code>, <code>28</code>, <code>30</code>, <code>32</code>, <code>34</code> and <code>36</code>. Sizes can be configured in the &#39;iosbadge.scss&#39; file and then built with the build tool.
+    </td>
+    <th>
+      <code>20</code>
+    </th>
+  </tr>
+  <tr>
+    <th>theme</th>
+    <td>
+      Set the theme of your badge. Default themes are: <code>&#39;red&#39;</code>, <code>&#39;blue&#39;</code>, <code>&#39;green&#39;</code>, <code>&#39;grey&#39;</code> and <code>&#39;ios&#39;</code>. Themes can be configured in the &#39;iosbadge.scss&#39; file.
+    </td>
+    <td>
+      <code>&#39;red&#39;</code>
+    </td>
+  </tr>
+  <tr>
+    <th>position</th>
+    <td>
+      Set the position of your badge. Options are: <code>&#39;top-left&#39;</code>, <code>&#39;top-right&#39;</code>, <code>&#39;bottom-left&#39;</code> or <code>&#39;bottom-right&#39;</code>.
+    </td>
+    <td>
+      <code>&#39;top-right&#39;</code>
+    </td>
+  </tr>
+  <tr>
+    <th>namespace</th>
+    <td>
+      Change the namespace used by the plugin. This needs to be changed in <code>iosbadge.scss</code> file as well.
+    </td>
+    <td>
+      <code>&#39;iosb&#39;</code>
+    </td>
+  </tr>
+</tbody>
+</table>
+          <div id="browsersupport"></div><h2>Browser support</h2>
+<p>iOSBadge works only in browsers that have a decent support for CSS3.
+
+</p>
+<p>It is tested to work in the following browsers:
+
+</p>
+<ul>
+<li>Internet Explorer 9+</li>
+<li>Firefox 3.6+</li>
+<li>Safari 4+</li>
+<li>Opera 12+</li>
+<li>Google Chrome</li>
+<li>iPad Safari (iOS 5+)</li>
+<li>iPhone Safari (iOS 4.1+)</li>
+</ul>
+
+          <div id="build"></div><h2>Build a custom version</h2>
+<h3>Dependencies for building a custom version of iOSBadge:</h3>
+<ul>
+<li><a href="http://www.ruby-lang.org/en/downloads/">Ruby</a> ( <a href="https://rvm.io/rvm/install/">Ruby version manager</a> )</li>
+<li><a href="http://nodejs.org/">Node.js</a> ( <a href="https://github.com/creationix/nvm">Node version manager</a> )</li>
+<li><a href="http://compass-style.org/">Compass</a> ( <code>gem install compass</code> ) *</li>
+<li><a href="http://gruntjs.com/">Grunt</a> ( <code>npm install grunt -g</code> ) *</li>
+</ul>
+<p>* add <code>sudo</code> in front of the command if needed
+
+</p>
+<h3>How to build &amp; contribute</h3>
+<ol>
+<li>Make sure that you have <a href="http://gruntjs.com/">Grunt</a> installed.</li>
+<li>In terminal move to iOSBadge folder and run <code>npm install</code> to install all dependencies.</li>
+<li>Make all Javascript changes in Coffeescript file(s), CSS changes in SCSS file(s). Make your changes only to files located inside the <code>src</code> folder.</li>
+<li>run <code>grunt</code> to build iOSBadge</li>
+<li>Make sure that all changes are valid and open a pull request</li>
+</ol>
+<p>You can use the <code>iosbadge.scss</code> file located in <code>src/iosbadge/scss</code> folder to add your custom themes and sizes. 
+
+</p>
+<p>All Javascript changes should be written in Coffeescript to <code>iosbadge.coffee</code> file located in <code>src/iosbadge/coffee</code> folder.
+
+</p>
+<p>Run <code>grunt</code> after your changes to build your custom version.
+
+</p>
+<h3>Building and running unit tests</h3>
+<p>Source files for jasmine tests can be found inside <code>src/test</code> folder. 
+
+</p>
+<p>You can build and run unit tests by running <code>grunt test</code> in the plugin folder in terminal.
+
+</p>
+<h3>API documentation</h3>
+<p>Plugin API documentation can be found inside the <code>docs</code> folder.
+
+
+
+
+</p>
+
+          <h2 id="download">Download a iOSBadge release</h2>
+          <p>All iOSBadge code and releases are hosted by GitHub.</p><a href="https://github.com/kristerkari/iOSBadge/tags">Click here to Download a iOSBage release from GitHub.</a>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/bootstrap/bootstrap-affix.js"></script>
+    <script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+    <script src="../dist/iosbadge.js"></script>
+    <script src="js/demo.js"></script>
+  </body>
+</html>
