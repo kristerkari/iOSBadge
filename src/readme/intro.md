@@ -4,7 +4,7 @@ iOSBadge is a small Javascript plugin that allows you to use iOS style notificat
 
 ## Big in features, tiny in file size
 
-iOSBadge has a lot of methods and options included by default. It is also really small in filesize: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use it like a regular jQuery plugin if you want to.
+iOSBadge has lots methods, options, themes and sizes included by default. It is also really small in filesize: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use it like a regular jQuery plugin if you want to.
 
 ## Modern components - for modern browsers
 
