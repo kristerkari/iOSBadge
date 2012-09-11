@@ -1,0 +1,29 @@
+{
+  "name": "iosbadge",
+  "title": "iOSBadge",
+  "description": "iOS style notification badges for modern browsers",
+  "version": "0.1.0",
+  "homepage": "http://kristerkari.github.com/iOSBadge/",
+  "author": {
+    "name": "Krister Kari",
+    "email": "krister.kari@webtehdas.fi",
+    "url": "http://www.krister.fi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kristerkari/iOSBadge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kristerkari/iOSBadge/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://kristerkari.github.com/iOSBadge/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6"
+  },
+  "keywords": []
+}
