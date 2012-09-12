@@ -1,5 +1,7 @@
 
 (function(window, document) {
+  "use strict";
+
   var addClass, hasClass, keys, konami, randomNumber, randomTheme, removeClass, themes;
   hasClass = function(el, name) {
     return new RegExp('(\\s|^)' + name + '(\\s|$)').test(el.className);
