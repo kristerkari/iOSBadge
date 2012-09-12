@@ -126,7 +126,7 @@ With the Javascript version the plugin options can be configured when invoking t
   <tr>
     <th>size</th>
     <td>
-      Set the size of your badge. Available default sizes are: `20`, `22`, `24`, `26`, `28`, `30`, `32`, `34` and `36`. Sizes can be configured in the 'iosbadge.scss' file and then built with the build tool.
+      Set the size of your badge. Available default sizes are: `20`, `22`, `24`, `26`, `28`, `30`, `32`, `34` and `36`. Sizes can be configured in the `iosbadge.scss` file and then built with the build tool.
     </td>
     <td>
       `20`
@@ -135,7 +135,7 @@ With the Javascript version the plugin options can be configured when invoking t
   <tr>
     <th>theme</th>
     <td>
-      Set the theme of your badge. Default themes are: `'red'`, `'blue'`, `'green'`, `'grey'` and `'ios'`. Themes can be configured in the 'iosbadge.scss' file.
+      Set the theme of your badge. Default themes are: `'red'`, `'blue'`, `'green'`, `'grey'` and `'ios'`. Themes can be configured in the `iosbadge.scss` file.
     </td>
     <td>
       `'red'`

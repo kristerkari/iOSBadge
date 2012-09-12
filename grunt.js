@@ -184,7 +184,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'coffee:iosb min concat:unmin concat:min compass:iosb csslint lint sizediff yuidoc concat:readme');
   grunt.registerTask('build', 'default');
   grunt.registerTask('build:tests', 'coffee:test');
-  grunt.registerTask('build:demo', 'coffee:demo compass:demo shell jade:demo');
+  grunt.registerTask('build:demo', 'coffee:demo compass:demo shell jade:demo concat:readme');
   grunt.registerTask('test', 'coffee:test jasmine');
   grunt.registerTask('size', 'sizediff');
 };
