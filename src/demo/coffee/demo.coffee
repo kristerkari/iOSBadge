@@ -1,4 +1,5 @@
 ((window, document) ->
+  "use strict"
 
   hasClass = (el, name) ->
     new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className)

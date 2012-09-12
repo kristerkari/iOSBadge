@@ -9,7 +9,7 @@
 </p>
 <pre><code>&lt;script src=&quot;iosbadge.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 <h3>2. Attach the badge to an element with plain Javascript, jQuery or Zepto</h3>
-<p>Using Javascript:
+<p>Using only Javascript:
 
 </p>
 <pre><code>var icon = document.getElementById(&#39;icon&#39;);
@@ -18,7 +18,7 @@ var badge = new IOSBadge(icon, { theme: &#39;ios&#39;, size: 22 });</code></pre>
 
 </p>
 <pre><code>badge.hide().setContent(1).increaseBy(7).setTheme(&#39;green&#39;).show();</code></pre>
-<p>Using jQuery or Zepto*:
+<p>Using jQuery or Zepto* library:
 
 </p>
 <pre><code>$(&quot;#icon&quot;).iosbadge({ theme: &#39;ios&#39;, size: 22 });</code></pre>

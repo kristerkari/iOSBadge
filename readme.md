@@ -4,7 +4,7 @@ iOSBadge is a small Javascript plugin that allows you to use iOS style notificat
 
 ## Big in features, tiny in file size
 
-iOSBadge has lots methods, options, themes and sizes included by default. It is also really small in filesize: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use it like a regular jQuery plugin if you want to.
+iOSBadge has lots methods, options, themes and sizes included by default. It is also really small in filesize: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use iOSBadge like a regular jQuery plugin if you want to.
 
 ## Modern components - for modern browsers
 
@@ -24,7 +24,7 @@ First link to the stylesheet inside your head element:
 
 ### 2. Attach the badge to an element with plain Javascript, jQuery or Zepto
 
-Using Javascript:
+Using only Javascript:
 
     var icon = document.getElementById('icon');
     var badge = new IOSBadge(icon, { theme: 'ios', size: 22 });
@@ -33,7 +33,7 @@ With the Javascript version you are able to use chaining with most of the method
 
     badge.hide().setContent(1).increaseBy(7).setTheme('green').show();
 
-Using jQuery or Zepto*:
+Using jQuery or Zepto* library:
 
     $("#icon").iosbadge({ theme: 'ios', size: 22 });
 
@@ -119,9 +119,9 @@ With the Javascript version the plugin options can be configured when invoking t
     <td>
       Set the content of your badge. Content can be a number or a string. Increase or decrease your current badge number by passing a `+` or `-` prefixed number in a string e.g. `.setContent('+7')`
     </td>
-    <td>
+    <th>
       `1`
-    </td>
+    </th>
   </tr>
   <tr>
     <th>size</th>
@@ -137,27 +137,27 @@ With the Javascript version the plugin options can be configured when invoking t
     <td>
       Set the theme of your badge. Default themes are: `'red'`, `'blue'`, `'green'`, `'grey'` and `'ios'`. Themes can be configured in the 'iosbadge.scss' file.
     </td>
-    <td>
+    <th>
       `'red'`
-    </td>
+    </th>
   </tr>
   <tr>
     <th>position</th>
     <td>
       Set the position of your badge. Options are: `'top-left'`, `'top-right'`, `'bottom-left'` or `'bottom-right'`.
     </td>
-    <td>
+    <th>
       `'top-right'`
-    </td>
+    </th>
   </tr>
   <tr>
     <th>namespace</th>
     <td>
       Change the namespace used by the plugin. This needs to be changed in `iosbadge.scss` file as well.
     </td>
-    <td>
+    <th>
       `'iosb'`
-    </td>
+    </th>
   </tr>
 </tbody>
 </table>

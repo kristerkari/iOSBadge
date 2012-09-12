@@ -12,7 +12,7 @@ First link to the stylesheet inside your head element:
 
 ### 2. Attach the badge to an element with plain Javascript, jQuery or Zepto
 
-Using Javascript:
+Using only Javascript:
 
     var icon = document.getElementById('icon');
     var badge = new IOSBadge(icon, { theme: 'ios', size: 22 });
@@ -21,7 +21,7 @@ With the Javascript version you are able to use chaining with most of the method
 
     badge.hide().setContent(1).increaseBy(7).setTheme('green').show();
 
-Using jQuery or Zepto*:
+Using jQuery or Zepto* library:
 
     $("#icon").iosbadge({ theme: 'ios', size: 22 });
 
