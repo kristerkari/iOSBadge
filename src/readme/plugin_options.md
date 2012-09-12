@@ -12,45 +12,45 @@ With the Javascript version the plugin options can be configured when invoking t
     <td>
       Set the content of your badge. Content can be a number or a string. Increase or decrease your current badge number by passing a `+` or `-` prefixed number in a string e.g. `.setContent('+7')`
     </td>
-    <th>
+    <td>
       `1`
-    </th>
+    </td>
   </tr>
   <tr>
     <th>size</th>
     <td>
       Set the size of your badge. Available default sizes are: `20`, `22`, `24`, `26`, `28`, `30`, `32`, `34` and `36`. Sizes can be configured in the 'iosbadge.scss' file and then built with the build tool.
     </td>
-    <th>
+    <td>
       `20`
-    </th>
+    </td>
   </tr>
   <tr>
     <th>theme</th>
     <td>
       Set the theme of your badge. Default themes are: `'red'`, `'blue'`, `'green'`, `'grey'` and `'ios'`. Themes can be configured in the 'iosbadge.scss' file.
     </td>
-    <th>
+    <td>
       `'red'`
-    </th>
+    </td>
   </tr>
   <tr>
     <th>position</th>
     <td>
       Set the position of your badge. Options are: `'top-left'`, `'top-right'`, `'bottom-left'` or `'bottom-right'`.
     </td>
-    <th>
+    <td>
       `'top-right'`
-    </th>
+    </td>
   </tr>
   <tr>
     <th>namespace</th>
     <td>
       Change the namespace used by the plugin. This needs to be changed in `iosbadge.scss` file as well.
     </td>
-    <th>
+    <td>
       `'iosb'`
-    </th>
+    </td>
   </tr>
 </tbody>
 </table>
