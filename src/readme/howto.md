@@ -10,7 +10,13 @@ First link to the stylesheet inside your head element:
 
     <script src="iosbadge.min.js"></script>
 
-### 2. Attach the badge to an element with plain Javascript, jQuery or Zepto
+### 2. Add some HTML to your page
+
+You need an element that has CSS `position` se to `relative` or `absolute`:
+
+    <div id="icon" style="position: relative;"></div>
+
+### 3. Attach the badge to an element with plain Javascript, jQuery or Zepto
 
 Using only Javascript:
 
