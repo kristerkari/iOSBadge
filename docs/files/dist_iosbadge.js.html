@@ -121,17 +121,7 @@
   *&#x2F;
 
   getType = function(content) {
-    var type;
-    if (typeof content === &#x27;string&#x27;) {
-      type = &#x27;string&#x27;;
-    } else if (typeof content === &#x27;number&#x27;) {
-      type = &#x27;number&#x27;;
-    } else if (typeof content === &#x27;object&#x27;) {
-      type = &#x27;object&#x27;;
-    } else if (typeof content === &#x27;function&#x27;) {
-      type = &#x27;function&#x27;;
-    }
-    return type;
+    return typeof content;
   };
   &#x2F;** 
     Constructor and plugin settings

@@ -33,17 +33,7 @@
   */
 
   getType = function(content) {
-    var type;
-    if (typeof content === 'string') {
-      type = 'string';
-    } else if (typeof content === 'number') {
-      type = 'number';
-    } else if (typeof content === 'object') {
-      type = 'object';
-    } else if (typeof content === 'function') {
-      type = 'function';
-    }
-    return type;
+    return typeof content;
   };
   /** 
     Constructor and plugin settings

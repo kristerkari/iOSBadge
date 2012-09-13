@@ -26,15 +26,7 @@
    @private
   ###
   getType = (content) ->
-    if typeof content is 'string'
-      type = 'string'
-    else if typeof content is 'number'
-      type = 'number'
-    else if typeof content is 'object'
-      type = 'object'
-    else if typeof content is 'function'
-      type = 'function'
-    return type
+    return typeof content
 
   ###* 
     Constructor and plugin settings
