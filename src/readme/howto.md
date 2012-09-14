@@ -12,9 +12,15 @@ First link to the stylesheet inside your head element:
 
 ### 2. Add some HTML to your page
 
-You need an element that has CSS `position` se to `relative` or `absolute`:
+You need an element that has CSS `position` se to `relative` (or `absolute`):
 
-    <div id="icon" style="position: relative;"></div>
+CSS:
+
+    .icon { position: relative; width: 64px; height: 64px; }
+
+HTML:
+
+    <div id="icon" class="icon"></div>
 
 ### 3. Attach the badge to an element with plain Javascript, jQuery or Zepto
 
