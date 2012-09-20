@@ -13,7 +13,7 @@
    @private
   */
 
-  var getType, isNumber;
+  var isNumber;
   isNumber = function(content) {
     if (typeof content === 'string' || typeof content === 'number') {
       if (!isNaN(parseInt(content, 10))) {
@@ -24,16 +24,6 @@
     } else {
       return false;
     }
-  };
-  /** 
-   Get the type of the content.
-   @param content {String|Number} The content
-   @return {String} The type of the content
-   @private
-  */
-
-  getType = function(content) {
-    return typeof content;
   };
   /** 
     Constructor and plugin settings
@@ -84,7 +74,7 @@
 
 
     IOSBadge.prototype._generate = function() {
-      this.type = getType(this.content);
+      this.type = typeof this.content;
       this.badgeElem = document.createElement('div');
       this.badgeInner = document.createElement('div');
       this.badgeContent = document.createElement('div');
@@ -136,7 +126,7 @@
     /**
       Set the content of badge element.
       @method _setContent
-      @param content {String} content for the badge element.
+      @param content {Number|String} content for the badge element.
       @private
     */
 
@@ -202,7 +192,7 @@
       if (content == null) {
         content = 1;
       }
-      type = getType(content);
+      type = typeof content;
       if (type === 'object' || type === 'function') {
         return this;
       } else if (this.badgeElem.style.display === 'none') {
