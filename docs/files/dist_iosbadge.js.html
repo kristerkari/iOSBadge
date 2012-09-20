@@ -101,7 +101,7 @@
    @private
   *&#x2F;
 
-  var getType, isNumber;
+  var isNumber;
   isNumber = function(content) {
     if (typeof content === &#x27;string&#x27; || typeof content === &#x27;number&#x27;) {
       if (!isNaN(parseInt(content, 10))) {
@@ -112,16 +112,6 @@
     } else {
       return false;
     }
-  };
-  &#x2F;** 
-   Get the type of the content.
-   @param content {String|Number} The content
-   @return {String} The type of the content
-   @private
-  *&#x2F;
-
-  getType = function(content) {
-    return typeof content;
   };
   &#x2F;** 
     Constructor and plugin settings
@@ -172,7 +162,7 @@
 
 
     IOSBadge.prototype._generate = function() {
-      this.type = getType(this.content);
+      this.type = typeof this.content;
       this.badgeElem = document.createElement(&#x27;div&#x27;);
       this.badgeInner = document.createElement(&#x27;div&#x27;);
       this.badgeContent = document.createElement(&#x27;div&#x27;);
@@ -290,7 +280,7 @@
       if (content == null) {
         content = 1;
       }
-      type = getType(content);
+      type = typeof content;
       if (type === &#x27;object&#x27; || type === &#x27;function&#x27;) {
         return this;
       } else if (this.badgeElem.style.display === &#x27;none&#x27;) {

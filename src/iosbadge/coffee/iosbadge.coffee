@@ -20,15 +20,6 @@
       false
 
   ###* 
-   Get the type of the content.
-   @param content {String|Number} The content
-   @return {String} The type of the content
-   @private
-  ###
-  getType = (content) ->
-    return typeof content
-
-  ###* 
     Constructor and plugin settings
 
     Make sure that the plugin works even without the `new` keyword. 
@@ -77,7 +68,7 @@
       @private
     ###
     _generate: ->
-      @type = getType(@content)
+      @type = typeof @content
 
       @badgeElem = document.createElement('div')
       @badgeInner = document.createElement('div')
@@ -181,7 +172,7 @@
     ###
     setContent: (content = 1) ->
 
-      type = getType(content)
+      type = typeof content
 
       if type is 'object' or type is 'function'
         return @
