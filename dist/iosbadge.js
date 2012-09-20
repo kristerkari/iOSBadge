@@ -136,7 +136,7 @@
     /**
       Set the content of badge element.
       @method _setContent
-      @param content {String} content for the badge element.
+      @param content {Number|String} content for the badge element.
       @private
     */
 

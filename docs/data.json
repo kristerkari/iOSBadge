@@ -111,7 +111,7 @@
                 {
                     "name": "content",
                     "description": "content for the badge element.",
-                    "type": "String"
+                    "type": "Number|String"
                 }
             ],
             "access": "private",
