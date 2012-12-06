@@ -144,5 +144,14 @@ ol.linenums {
   h3 {
     font-size: 20px; }
 
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 100%; }
+
   .fork {
-    position: absolute; } }
+    position: absolute; }
+
+  .table th, .table td {
+    font-size: 12px; } }
+@media (max-width: 639px) {
+  .fork {
+    display: none; } }
