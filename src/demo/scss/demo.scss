@@ -134,6 +134,10 @@ ol.linenums {
   position: fixed;
 }
 
+.btn-group + .btn-group {
+  margin: 5px 0 0;
+}
+
 @media (max-width: 979px) {
   .sidebar {
     display: none;

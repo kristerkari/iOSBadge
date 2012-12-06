@@ -67,16 +67,18 @@ html
             button.btn -3
             button.btn new
           h4 Set badge size to:
-          div.btn-group#demo-size
-            button.btn 20
-            button.btn 22
-            button.btn.active 24
-            button.btn 26
-            button.btn 28            
-            button.btn 30
-            button.btn 32
-            button.btn 34
-            button.btn 36
+          div#demo-size
+            div.btn-group
+              button.btn 20
+              button.btn 22
+              button.btn.active 24
+              button.btn 26
+              button.btn 28
+            div.btn-group           
+              button.btn 30
+              button.btn 32
+              button.btn 34
+              button.btn 36
           h4 Set badge theme to:
           div.btn-group#demo-theme
             button.btn.active red
@@ -85,11 +87,13 @@ html
             button.btn grey
             button.btn ios
           h4 Set badge position to:
-          div.btn-group#demo-pos
-            button.btn top-left
-            button.btn.active top-right
-            button.btn bottom-left
-            button.btn bottom-right
+          div#demo-pos
+            div.btn-group
+              button.btn top-left
+              button.btn.active top-right
+            div.btn-group
+              button.btn bottom-left
+              button.btn bottom-right
           div#howto
           !{howto}
           div#methods
