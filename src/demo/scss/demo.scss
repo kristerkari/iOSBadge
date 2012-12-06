@@ -130,11 +130,30 @@ ol.linenums {
   }
 }
 
+.fork {
+  position: fixed;
+}
 
-// Mediaqueries
 @media (max-width: 979px) {
   .sidebar {
     display: none;
   }
 }
 
+@media (max-width: 770px) {
+  body {
+    padding: 0.8em;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .fork {
+    position: absolute;
+  }
+}

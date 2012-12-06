@@ -1,10 +1,5 @@
 {
-    "project": {
-        "options": {
-            "paths": "dist",
-            "outdir": "docs/"
-        }
-    },
+    "project": {},
     "files": {
         "dist/iosbadge.js": {
             "name": "dist/iosbadge.js",
@@ -283,6 +278,12 @@
                 "\n    badge.show();"
             ],
             "class": "IOSBadge"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nCheck if the content is a number",
+            "line": " dist/iosbadge.js:9"
         }
     ]
 }
