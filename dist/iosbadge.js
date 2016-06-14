@@ -1,4 +1,4 @@
-/*! iOSBadge - v0.1.0
+/*! iOSBadge - v0.2.0
 * http://kristerkari.github.com/iOSBadge/
 * Copyright (c) 2016 Krister Kari; Licensed MIT */
 
@@ -24,10 +24,10 @@
     }
   };
 
-  /** 
+  /**
     Constructor and plugin settings
   
-    Make sure that the plugin works even without the `new` keyword. 
+    Make sure that the plugin works even without the `new` keyword.
   
     Check for any user defined settings and initialize the plugin.
     @class IOSBadge
@@ -71,7 +71,10 @@
      */
 
     IOSBadge.prototype._generate = function() {
-      this.type = typeof this.content;
+      this.type = isNumber(this.content) ? 'number' : 'string';
+      if (/^(-|\+)\d+/.test(this.content)) {
+        this.content = this.content.slice(1);
+      }
       this.badgeElem = document.createElement('div');
       this.badgeInner = document.createElement('div');
       this.badgeContent = document.createElement('div');
@@ -174,7 +177,7 @@
 
 
     /**
-      Set the content of your badge. Content can be a number or a string. 
+      Set the content of your badge. Content can be a number or a string.
       Increase or decrease your current badge number by passing a `'+'` or `'-'` prefixed
       number in a string e.g. `.setContent('+7')`
       @method setContent
@@ -223,7 +226,7 @@
     };
 
 
-    /** 
+    /**
       Set the position of your badge.
       Positions are: `'top-left'`, `'top-right'`, `'bottom-left'` or `'bottom-right'`.
       @method setPosition

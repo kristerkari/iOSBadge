@@ -87,24 +87,31 @@
           <div id="howto"></div><h2 id="how-to-use-it">How to use it</h2>
 <h3 id="1-link-to-the-plugin-files-on-your-page">1. Link to the plugin files on your page</h3>
 <p>First link to the stylesheet inside your head element:</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;iosbadge.css&quot;&gt;
-</code></pre><p>...and then to the Javascript file before your closing <code>&lt;/body&gt;</code> tag:</p>
-<pre><code>&lt;script src=&quot;iosbadge.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><h3 id="2-add-some-html-to-your-page">2. Add some HTML to your page</h3>
+<pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;iosbadge.css&quot;&gt;
+</code></pre>
+<p>...and then to the Javascript file before your closing <code>&lt;/body&gt;</code> tag:</p>
+<pre><code class="lang-html">&lt;script src=&quot;iosbadge.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="2-add-some-html-to-your-page">2. Add some HTML to your page</h3>
 <p>You need an element that has CSS <code>position</code> se to <code>relative</code> (or <code>absolute</code>):</p>
 <p>CSS:</p>
-<pre><code>.icon { position: relative; width: 64px; height: 64px; }
-</code></pre><p>HTML:</p>
-<pre><code>&lt;div id=&quot;icon&quot; class=&quot;icon&quot;&gt;&lt;/div&gt;
-</code></pre><h3 id="3-attach-the-badge-to-an-element-with-plain-javascript-jquery-or-zepto">3. Attach the badge to an element with plain Javascript, jQuery or Zepto</h3>
+<pre><code class="lang-css">.icon { position: relative; width: 64px; height: 64px; }
+</code></pre>
+<p>HTML:</p>
+<pre><code class="lang-html">&lt;div id=&quot;icon&quot; class=&quot;icon&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="3-attach-the-badge-to-an-element-with-plain-javascript-jquery-or-zepto">3. Attach the badge to an element with plain Javascript, jQuery or Zepto</h3>
 <p>Using only Javascript:</p>
-<pre><code>var icon = document.getElementById(&#39;icon&#39;);
+<pre><code class="lang-js">var icon = document.getElementById(&#39;icon&#39;);
 var badge = new IOSBadge(icon, { theme: &#39;ios&#39;, size: 22 });
-</code></pre><p>With the Javascript version you are able to use chaining with most of the methods (notice that this is not possible with the jQuery version), e.g.</p>
-<pre><code>badge.hide().setContent(1).increaseBy(7).setTheme(&#39;green&#39;).show();
-</code></pre><p>Using jQuery or Zepto* library:</p>
-<pre><code>$(&quot;#icon&quot;).iosbadge({ theme: &#39;ios&#39;, size: 22 });
-</code></pre><p>* If you use Zepto, you need to build a custom version that has the <a href="https://github.com/madrobby/zepto#zepto-modules">data module</a></p>
+</code></pre>
+<p>With the Javascript version you are able to use chaining with most of the methods (notice that this is not possible with the jQuery version), e.g.</p>
+<pre><code class="lang-js">badge.hide().setContent(1).increaseBy(7).setTheme(&#39;green&#39;).show();
+</code></pre>
+<p>Using jQuery or Zepto* library:</p>
+<pre><code class="lang-js">$(&quot;#icon&quot;).iosbadge({ theme: &#39;ios&#39;, size: 22 });
+</code></pre>
+<p>* If you use Zepto, you need to build a custom version that has the <a href="https://github.com/madrobby/zepto#zepto-modules">data module</a></p>
 
           <div id="methods"></div><h2 id="public-methods-for-the-javascript-version">Public methods for the Javascript version</h2>
 <p>You can use the plugin methods after you have initialized the plugin.</p>
