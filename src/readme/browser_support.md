@@ -1,6 +1,6 @@
 ## Browser support
 
-iOSBadge works only in browsers that have a decent support for CSS3.
+iOSBadge works only in browsers that have support for CSS3.
 
 It is tested to work in the following browsers:
 
