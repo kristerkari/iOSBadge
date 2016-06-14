@@ -19,10 +19,10 @@
     else
       false
 
-  ###* 
+  ###*
     Constructor and plugin settings
 
-    Make sure that the plugin works even without the `new` keyword. 
+    Make sure that the plugin works even without the `new` keyword.
 
     Check for any user defined settings and initialize the plugin.
     @class IOSBadge
@@ -30,13 +30,13 @@
     @example
         var badge = new IOSBadge();
   ###
-  class window.IOSBadge 
+  class window.IOSBadge
     constructor: (element, settings) ->
       if not (@ instanceof IOSBadge)
         return new IOSBadge(element, settings)
       else if not element or not (element.nodeType and element.nodeType is 1)
         throw new Error 'You need to pass an element as the first argument to iOSBadge'
-      
+
       @element = element
       @settings = settings
 
@@ -68,7 +68,12 @@
       @private
     ###
     _generate: ->
-      @type = typeof @content
+      @type = if isNumber(@content) then 'number' else 'string'
+
+      # handle initial plus or minus value
+      # e.g. iosbadge({ content: '+1' })
+      if /^(-|\+)\d+/.test(@content)
+        @content = @content.slice(1)
 
       @badgeElem = document.createElement('div')
       @badgeInner = document.createElement('div')
@@ -101,7 +106,7 @@
 
         if options.hide && options.hide is true
           @hide()
-        else if options.show && options.show is true 
+        else if options.show && options.show is true
           @show()
 
       else if typeof options is 'string'
@@ -123,7 +128,7 @@
       @content = content
       @badgeContent.innerHTML = content
       return
-    
+
     ###*
       Set the classnames used by the plugin.
       @method _setClasses
@@ -161,7 +166,7 @@
         badgeContent
 
     ###*
-      Set the content of your badge. Content can be a number or a string. 
+      Set the content of your badge. Content can be a number or a string.
       Increase or decrease your current badge number by passing a `'+'` or `'-'` prefixed
       number in a string e.g. `.setContent('+7')`
       @method setContent
@@ -205,7 +210,7 @@
       @_setContent(content)
       return @
 
-    ###* 
+    ###*
       Set the position of your badge.
       Positions are: `'top-left'`, `'top-right'`, `'bottom-left'` or `'bottom-right'`.
       @method setPosition

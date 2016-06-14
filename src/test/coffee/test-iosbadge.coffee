@@ -501,6 +501,44 @@ describe "iOSBadge jQuery version", ->
       expect(badgeElem.children().children().children().eq(0)).toHaveClass('test-number')
       expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
 
+  describe ".iosbadge({ content: number/'text' }) option with an initial value", ->
+    beforeEach ->
+      badgeElem = $('#badge')
+    it "should be able to set initial content to 1", ->
+      badgeElem.iosbadge({ content: 1 })
+      expect(badgeElem.iosbadge('getContent')).toBe(1)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+    it "should be able to set content to '1'", ->
+      badgeElem.iosbadge({ content: '1' })
+      expect(badgeElem.iosbadge('getContent')).toBe(1)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+    it "should set content to 1 if initial content is '+1'", ->
+      badgeElem.iosbadge({ content: '+1' })
+      expect(badgeElem.iosbadge('getContent')).toBe(1)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+    it "should set content to 1 if initial content is '-1'", ->
+      badgeElem.iosbadge({ content: '-1' })
+      expect(badgeElem.iosbadge('getContent')).toBe(1)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+    it "should set content to 2 if initial content is '+2'", ->
+      badgeElem.iosbadge({ content: '+2' })
+      expect(badgeElem.iosbadge('getContent')).toBe(2)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('2')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+    it "should handle initial content of '+2' and increment after it", ->
+      badgeElem.iosbadge({ content: '+2' })
+      expect(badgeElem.iosbadge('getContent')).toBe(2)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('2')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+      badgeElem.iosbadge({ content: '+2' })
+      expect(badgeElem.iosbadge('getContent')).toBe(4)
+      expect(badgeElem.children().children().children().eq(0)).toHaveHtml('4')
+      expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
+
    describe ".iosbadge({ content: number/'text' }) option", ->
     beforeEach ->
       badgeElem = $('#badge')
