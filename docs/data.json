@@ -22,7 +22,7 @@
             "plugin_for": [],
             "extension_for": [],
             "file": "dist/iosbadge.js",
-            "line": 28,
+            "line": 27,
             "description": "Constructor and plugin settings\n  \nMake sure that the plugin works even without the `new` keyword. \n  \nCheck for any user defined settings and initialize the plugin.",
             "is_constructor": 1,
             "example": [
@@ -30,10 +30,11 @@
             ]
         }
     },
+    "elements": {},
     "classitems": [
         {
             "file": "dist/iosbadge.js",
-            "line": 9,
+            "line": 8,
             "description": "Check if the content is a number",
             "params": [
                 {
@@ -52,7 +53,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 69,
+            "line": 67,
             "description": "Generate elements used by the plugin.",
             "itemtype": "method",
             "name": "_generate",
@@ -62,7 +63,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 88,
+            "line": 86,
             "description": "Set jQuery/Zepto options from the user.",
             "itemtype": "method",
             "name": "_setOptions",
@@ -79,7 +80,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 126,
+            "line": 124,
             "description": "Set the content of badge element.",
             "itemtype": "method",
             "name": "_setContent",
@@ -96,7 +97,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 139,
+            "line": 137,
             "description": "Set the classnames used by the plugin.",
             "itemtype": "method",
             "name": "_setClasses",
@@ -128,7 +129,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 158,
+            "line": 156,
             "description": "Returns the current content set for badge. Not chainable.",
             "itemtype": "method",
             "name": "getContent",
@@ -143,7 +144,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 178,
+            "line": 176,
             "description": "Set the content of your badge. Content can be a number or a string. \nIncrease or decrease your current badge number by passing a `'+'` or `'-'` prefixed\nnumber in a string e.g. `.setContent('+7')`",
             "itemtype": "method",
             "name": "setContent",
@@ -162,7 +163,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 228,
+            "line": 226,
             "description": "Set the position of your badge.\nPositions are: `'top-left'`, `'top-right'`, `'bottom-left'` or `'bottom-right'`.",
             "itemtype": "method",
             "name": "setPosition",
@@ -181,7 +182,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 247,
+            "line": 245,
             "description": "Set the theme of your badge.\nAvailable default themes are: `'red'`, `'blue'`, `'green'`, `'grey'` and `'ios'`.\nThemes can be configured in the `iosbadge.scss` file.",
             "itemtype": "method",
             "name": "setTheme",
@@ -200,7 +201,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 267,
+            "line": 265,
             "description": "Set the size of your badge.\nAvailable default sizes are: `20`, `22`, `24`, `26`, `28`, `30`, `32`, `34` and `36`.\nSizes can be configured in the `iosbadge.scss` file.",
             "itemtype": "method",
             "name": "setSize",
@@ -219,7 +220,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 287,
+            "line": 285,
             "description": "Decrease the current number in your badge.",
             "itemtype": "method",
             "name": "decreaseBy",
@@ -238,7 +239,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 306,
+            "line": 304,
             "description": "Increase the current number in your badge.",
             "itemtype": "method",
             "name": "increaseBy",
@@ -257,7 +258,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 325,
+            "line": 323,
             "description": "Hide your badge element.",
             "itemtype": "method",
             "name": "hide",
@@ -269,7 +270,7 @@
         },
         {
             "file": "dist/iosbadge.js",
-            "line": 339,
+            "line": 337,
             "description": "Show your badge element.",
             "itemtype": "method",
             "name": "hide",
@@ -283,7 +284,7 @@
     "warnings": [
         {
             "message": "Missing item type\nCheck if the content is a number",
-            "line": " dist/iosbadge.js:9"
+            "line": " dist/iosbadge.js:8"
         }
     ]
 }

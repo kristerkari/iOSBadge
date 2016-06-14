@@ -4,6 +4,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "IOSBadge"
     ],
     "modules": [],
-    "allModules": []
+    "allModules": [],
+    "elements": []
 } };
 });

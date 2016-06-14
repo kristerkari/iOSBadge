@@ -4,11 +4,11 @@ iOSBadge is a small Javascript plugin that allows you to use iOS style notificat
 
 ## Big in features, tiny in file size
 
-iOSBadge has lots methods, options, themes and sizes included by default. It is also really small in filesize: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use iOSBadge like a regular jQuery plugin if you want to.
+iOSBadge has lots methods, options, themes and sizes included by default. It is also really small in file size: the JS and CSS files combined are ~3kb minified and gzipped. There is no extra weight included since the plugin does not require jQuery, but you can link to jQuery inside your page and use iOSBadge like a regular jQuery plugin if you want to.
 
 ## Modern components - for modern browsers
 
-iOSBadge is built using [Coffeescript](http://coffeescript.org/) and [Compass](http://compass-style.org/) ([Sass](http://sass-lang.com/)) (_..and [Jade](http://jade-lang.com/) is used for HTML templates_). Using Sass is important to have CSS math to generate all the different sized badges, and with Compass all of the CSS vendor prefixes can be included automatically. The plugin uses CSS3 properties and works in modern browsers only, so no oldIE support is included.
+iOSBadge is built using [Coffeescript](http://coffeescript.org/) and [Sass](http://sass-lang.com/). Using Sass is important to have CSS math to generate all the different sized badges. The plugin uses CSS3 properties and works in modern browsers only, so no oldIE support is included.
 
 ## How to use it
 
@@ -176,7 +176,7 @@ With the Javascript version the plugin options can be configured when invoking t
 
 ## Browser support
 
-iOSBadge works only in browsers that have a decent support for CSS3.
+iOSBadge works only in browsers that have support for CSS3.
 
 It is tested to work in the following browsers:
 
@@ -192,37 +192,28 @@ It is tested to work in the following browsers:
 
 ### Dependencies for building a custom version of iOSBadge:
 
-* [Ruby](http://www.ruby-lang.org/en/downloads/) ( [Ruby version manager](https://rvm.io/rvm/install/) )
 * [Node.js](http://nodejs.org/) ( [Node version manager](https://github.com/creationix/nvm) )
-* [Compass](http://compass-style.org/) ( `gem install compass` ) *
-* [Grunt](http://gruntjs.com/) ( `npm install grunt -g` ) *
-
-\* add `sudo` in front of the command if needed
 
 ### How to build & contribute
 
-1. Make sure that you have [Grunt](http://gruntjs.com/) installed.
+1. Clone project to your local machine.
 2. In terminal move to iOSBadge folder and run `npm install` to install all dependencies.
 3. Make all Javascript changes in Coffeescript file(s), CSS changes in SCSS file(s). Make your changes only to files located inside the `src` folder.
-4. run `grunt` to build iOSBadge
+4. run `npm run build` to build iOSBadge
 5. Make sure that all changes are valid and open a pull request
 
-You can use the `iosbadge.scss` file located in `src/iosbadge/scss` folder to add your custom themes and sizes. 
+You can use the `iosbadge.scss` file located in `src/iosbadge/scss` folder to add your custom themes and sizes.
 
 All Javascript changes should be written in Coffeescript to `iosbadge.coffee` file located in `src/iosbadge/coffee` folder.
 
-Run `grunt` after your changes to build your custom version.
+Run `npm run build` after your changes to build your custom version.
 
 ### Building and running unit tests
 
-Source files for jasmine tests can be found inside `src/test` folder. 
+Source files for jasmine tests can be found inside `src/test` folder.
 
-You can build and run unit tests by running `grunt test` in the plugin folder in terminal.
+You can build and run unit tests by running `npm test` in the plugin folder in terminal.
 
 ### API documentation
 
 Plugin API documentation can be found inside the `docs` folder.
-
-
-
-

@@ -11,57 +11,57 @@
 /* BEGIN themes */
 .iosb-red {
   background-color: #ce0408;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fc5659), color-stop(100%, #ce0408));
-  background: -webkit-linear-gradient(#fc5659, #ce0408);
-  background: -moz-linear-gradient(#fc5659, #ce0408);
-  background: -o-linear-gradient(#fc5659, #ce0408);
-  background: linear-gradient(#fc5659, #ce0408); }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc5659), to(#ce0408));
+  background-image: -webkit-linear-gradient(#fc5659, #ce0408);
+  background-image: -moz-linear-gradient(#fc5659, #ce0408);
+  background-image: -o-linear-gradient(#fc5659, #ce0408);
+  background-image: linear-gradient(#fc5659, #ce0408); }
   .iosb-red .iosb-content {
-    color: white;
+    color: #fff;
     text-shadow: 1px -1px 1px #8d343b; }
 
 .iosb-blue {
   background-color: #236ed8;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8eb5ed), color-stop(100%, #236ed8));
-  background: -webkit-linear-gradient(#8eb5ed, #236ed8);
-  background: -moz-linear-gradient(#8eb5ed, #236ed8);
-  background: -o-linear-gradient(#8eb5ed, #236ed8);
-  background: linear-gradient(#8eb5ed, #236ed8); }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8eb5ed), to(#236ed8));
+  background-image: -webkit-linear-gradient(#8eb5ed, #236ed8);
+  background-image: -moz-linear-gradient(#8eb5ed, #236ed8);
+  background-image: -o-linear-gradient(#8eb5ed, #236ed8);
+  background-image: linear-gradient(#8eb5ed, #236ed8); }
   .iosb-blue .iosb-content {
-    color: white;
+    color: #fff;
     text-shadow: 1px -1px 1px #1e6bd7; }
 
 .iosb-green {
   background-color: #1d9a1a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #55e252), color-stop(100%, #1d9a1a));
-  background: -webkit-linear-gradient(#55e252, #1d9a1a);
-  background: -moz-linear-gradient(#55e252, #1d9a1a);
-  background: -o-linear-gradient(#55e252, #1d9a1a);
-  background: linear-gradient(#55e252, #1d9a1a); }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#55e252), to(#1d9a1a));
+  background-image: -webkit-linear-gradient(#55e252, #1d9a1a);
+  background-image: -moz-linear-gradient(#55e252, #1d9a1a);
+  background-image: -o-linear-gradient(#55e252, #1d9a1a);
+  background-image: linear-gradient(#55e252, #1d9a1a); }
   .iosb-green .iosb-content {
-    color: white;
+    color: #fff;
     text-shadow: 1px -1px 1px #086d11; }
 
 .iosb-grey {
   background-color: #3a3a3a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #868686), color-stop(100%, #3a3a3a));
-  background: -webkit-linear-gradient(#868686, #3a3a3a);
-  background: -moz-linear-gradient(#868686, #3a3a3a);
-  background: -o-linear-gradient(#868686, #3a3a3a);
-  background: linear-gradient(#868686, #3a3a3a); }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#868686), to(#3a3a3a));
+  background-image: -webkit-linear-gradient(#868686, #3a3a3a);
+  background-image: -moz-linear-gradient(#868686, #3a3a3a);
+  background-image: -o-linear-gradient(#868686, #3a3a3a);
+  background-image: linear-gradient(#868686, #3a3a3a); }
   .iosb-grey .iosb-content {
-    color: white;
+    color: #fff;
     text-shadow: 1px -1px 1px #474747; }
 
 .iosb-ios {
   background-color: #4a6c9b;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #849cbb), color-stop(100%, #4a6c9b));
-  background: -webkit-linear-gradient(#849cbb, #4a6c9b);
-  background: -moz-linear-gradient(#849cbb, #4a6c9b);
-  background: -o-linear-gradient(#849cbb, #4a6c9b);
-  background: linear-gradient(#849cbb, #4a6c9b); }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#849cbb), to(#4a6c9b));
+  background-image: -webkit-linear-gradient(#849cbb, #4a6c9b);
+  background-image: -moz-linear-gradient(#849cbb, #4a6c9b);
+  background-image: -o-linear-gradient(#849cbb, #4a6c9b);
+  background-image: linear-gradient(#849cbb, #4a6c9b); }
   .iosb-ios .iosb-content {
-    color: white;
+    color: #fff;
     text-shadow: 1px -1px 1px #626a76; }
 
 /* END themes */
@@ -73,10 +73,7 @@
   min-width: 20px;
   height: 20px; }
   .iosb-20, .iosb-20 .iosb-inner {
-    -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
     border-radius: 10px; }
   .iosb-20 .iosb-inner {
     margin: 1px;
@@ -110,10 +107,7 @@
   min-width: 22px;
   height: 22px; }
   .iosb-22, .iosb-22 .iosb-inner {
-    -webkit-border-radius: 11px;
     -moz-border-radius: 11px;
-    -ms-border-radius: 11px;
-    -o-border-radius: 11px;
     border-radius: 11px; }
   .iosb-22 .iosb-inner {
     margin: 1px;
@@ -147,10 +141,7 @@
   min-width: 24px;
   height: 24px; }
   .iosb-24, .iosb-24 .iosb-inner {
-    -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
     border-radius: 12px; }
   .iosb-24 .iosb-inner {
     margin: 2px;
@@ -184,10 +175,7 @@
   min-width: 26px;
   height: 26px; }
   .iosb-26, .iosb-26 .iosb-inner {
-    -webkit-border-radius: 13px;
     -moz-border-radius: 13px;
-    -ms-border-radius: 13px;
-    -o-border-radius: 13px;
     border-radius: 13px; }
   .iosb-26 .iosb-inner {
     margin: 2px;
@@ -221,10 +209,7 @@
   min-width: 28px;
   height: 28px; }
   .iosb-28, .iosb-28 .iosb-inner {
-    -webkit-border-radius: 14px;
     -moz-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -o-border-radius: 14px;
     border-radius: 14px; }
   .iosb-28 .iosb-inner {
     margin: 2px;
@@ -258,10 +243,7 @@
   min-width: 30px;
   height: 30px; }
   .iosb-30, .iosb-30 .iosb-inner {
-    -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     border-radius: 15px; }
   .iosb-30 .iosb-inner {
     margin: 2px;
@@ -295,10 +277,7 @@
   min-width: 32px;
   height: 32px; }
   .iosb-32, .iosb-32 .iosb-inner {
-    -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
     border-radius: 16px; }
   .iosb-32 .iosb-inner {
     margin: 2px;
@@ -332,10 +311,7 @@
   min-width: 34px;
   height: 34px; }
   .iosb-34, .iosb-34 .iosb-inner {
-    -webkit-border-radius: 17px;
     -moz-border-radius: 17px;
-    -ms-border-radius: 17px;
-    -o-border-radius: 17px;
     border-radius: 17px; }
   .iosb-34 .iosb-inner {
     margin: 2px;
@@ -369,10 +345,7 @@
   min-width: 36px;
   height: 36px; }
   .iosb-36, .iosb-36 .iosb-inner {
-    -webkit-border-radius: 18px;
     -moz-border-radius: 18px;
-    -ms-border-radius: 18px;
-    -o-border-radius: 18px;
     border-radius: 18px; }
   .iosb-36 .iosb-inner {
     margin: 3px;
