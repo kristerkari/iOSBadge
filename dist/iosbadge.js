@@ -1,7 +1,6 @@
-/*! iOSBadge - v0.1.0
+/*! iOSBadge - v0.2.0
 * http://kristerkari.github.com/iOSBadge/
-* Copyright (c) 2012 Krister Kari; Licensed MIT */
-
+* Copyright (c) 2016 Krister Kari; Licensed MIT */
 
 (function($, window, document) {
   'use strict';
@@ -11,8 +10,7 @@
    @param content {String|Number} The content
    @return {Boolean} true or false depending on if the content is a number
    @private
-  */
-
+   */
   var isNumber;
   isNumber = function(content) {
     if (typeof content === 'string' || typeof content === 'number') {
@@ -25,20 +23,19 @@
       return false;
     }
   };
-  /** 
+
+  /**
     Constructor and plugin settings
   
-    Make sure that the plugin works even without the `new` keyword. 
+    Make sure that the plugin works even without the `new` keyword.
   
     Check for any user defined settings and initialize the plugin.
     @class IOSBadge
     @constructor
     @example
         var badge = new IOSBadge();
-  */
-
+   */
   window.IOSBadge = (function() {
-
     function IOSBadge(element, settings) {
       if (!(this instanceof IOSBadge)) {
         return new IOSBadge(element, settings);
@@ -66,15 +63,18 @@
       this._generate();
     }
 
+
     /**
       Generate elements used by the plugin.
       @method _generate
       @private
-    */
-
+     */
 
     IOSBadge.prototype._generate = function() {
-      this.type = typeof this.content;
+      this.type = isNumber(this.content) ? 'number' : 'string';
+      if (/^(-|\+)\d+/.test(this.content)) {
+        this.content = this.content.slice(1);
+      }
       this.badgeElem = document.createElement('div');
       this.badgeInner = document.createElement('div');
       this.badgeContent = document.createElement('div');
@@ -85,13 +85,13 @@
       this.element.appendChild(this.badgeElem);
     };
 
+
     /**
       Set jQuery/Zepto options from the user.
       @method _setOptions
       @param options {Object|String} Plugin options given with jQuery or Zepto.
       @private
-    */
-
+     */
 
     IOSBadge.prototype._setOptions = function(options) {
       if (options && typeof options === 'object') {
@@ -123,18 +123,19 @@
       }
     };
 
+
     /**
       Set the content of badge element.
       @method _setContent
       @param content {Number|String} content for the badge element.
       @private
-    */
-
+     */
 
     IOSBadge.prototype._setContent = function(content) {
       this.content = content;
       this.badgeContent.innerHTML = content;
     };
+
 
     /**
       Set the classnames used by the plugin.
@@ -144,16 +145,16 @@
       @param type {String} Badge type (number or string).
       @param theme {String} Badge theme.
       @private
-    */
-
+     */
 
     IOSBadge.prototype._setClasses = function(position, size, type, theme) {
       var namespace;
       namespace = this.namespace;
-      this.badgeElem.className = "" + namespace + " " + namespace + "-" + size + " " + namespace + "-" + position;
-      this.badgeInner.className = "" + namespace + "-inner " + namespace + "-" + theme;
-      this.badgeContent.className = "" + namespace + "-content " + namespace + "-" + type;
+      this.badgeElem.className = namespace + " " + namespace + "-" + size + " " + namespace + "-" + position;
+      this.badgeInner.className = namespace + "-inner " + namespace + "-" + theme;
+      this.badgeContent.className = namespace + "-content " + namespace + "-" + type;
     };
+
 
     /**
       Returns the current content set for badge. Not chainable.
@@ -161,8 +162,7 @@
       @return {Number|String} Badge content.
       @example
           badge.getContent();
-    */
-
+     */
 
     IOSBadge.prototype.getContent = function() {
       var badgeContent, badgeContentInt;
@@ -175,8 +175,9 @@
       }
     };
 
+
     /**
-      Set the content of your badge. Content can be a number or a string. 
+      Set the content of your badge. Content can be a number or a string.
       Increase or decrease your current badge number by passing a `'+'` or `'-'` prefixed
       number in a string e.g. `.setContent('+7')`
       @method setContent
@@ -184,8 +185,7 @@
       @chainable
       @example
           badge.setContent(6);
-    */
-
+     */
 
     IOSBadge.prototype.setContent = function(content) {
       var amount, firstChar, type;
@@ -225,7 +225,8 @@
       return this;
     };
 
-    /** 
+
+    /**
       Set the position of your badge.
       Positions are: `'top-left'`, `'top-right'`, `'bottom-left'` or `'bottom-right'`.
       @method setPosition
@@ -233,8 +234,7 @@
       @chainable
       @example
           badge.setPosition('bottom-left');
-    */
-
+     */
 
     IOSBadge.prototype.setPosition = function(position) {
       if (typeof position === 'string') {
@@ -243,6 +243,7 @@
       }
       return this;
     };
+
 
     /**
       Set the theme of your badge.
@@ -253,8 +254,7 @@
       @chainable
       @example
           badge.setTheme('ios');
-    */
-
+     */
 
     IOSBadge.prototype.setTheme = function(theme) {
       if (typeof theme === 'string') {
@@ -263,6 +263,7 @@
       }
       return this;
     };
+
 
     /**
       Set the size of your badge.
@@ -273,8 +274,7 @@
       @chainable
       @example
           badge.setSize(30);
-    */
-
+     */
 
     IOSBadge.prototype.setSize = function(size) {
       if (isNumber(size)) {
@@ -284,6 +284,7 @@
       return this;
     };
 
+
     /**
       Decrease the current number in your badge.
       @method decreaseBy
@@ -291,8 +292,7 @@
       @chainable
       @example
           badge.decreaseBy(2);
-    */
-
+     */
 
     IOSBadge.prototype.decreaseBy = function(amount) {
       if (isNumber(amount)) {
@@ -303,6 +303,7 @@
       return this;
     };
 
+
     /**
       Increase the current number in your badge.
       @method increaseBy
@@ -310,8 +311,7 @@
       @chainable
       @example
           badge.increaseBy(2);
-    */
-
+     */
 
     IOSBadge.prototype.increaseBy = function(amount) {
       if (isNumber(amount)) {
@@ -322,19 +322,20 @@
       return this;
     };
 
+
     /**
       Hide your badge element.
       @method hide
       @chainable
       @example
           badge.hide();
-    */
-
+     */
 
     IOSBadge.prototype.hide = function() {
       this.badgeElem.style.display = 'none';
       return this;
     };
+
 
     /**
       Show your badge element.
@@ -342,8 +343,7 @@
       @chainable
       @example
           badge.show();
-    */
-
+     */
 
     IOSBadge.prototype.show = function() {
       this.badgeElem.style.display = 'block';
