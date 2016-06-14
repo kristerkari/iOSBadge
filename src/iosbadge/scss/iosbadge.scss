@@ -1,7 +1,3 @@
-@import "compass/css3/images",
-		"compass/css3/border-radius",
-		"compass/css3/box-shadow";
-
 // ----------------------
 //  iOSBadge settings
 // ----------------------
@@ -67,7 +63,7 @@ $color-inner-shadow: transparentize(#fff, 0.7);
 @mixin create-theme($themeName, $darkColor, $lightColor, $textColor, $shadowColor) {
 	.#{$namespace}-#{$themeName} {
 		background-color: $darkColor;
-		@include background(linear-gradient($lightColor, $darkColor));
+		background-image: linear-gradient($lightColor, $darkColor);
 		.#{$namespace}-content {
 			color: $textColor;
 			text-shadow: 1px -1px 1px $shadowColor;
@@ -95,12 +91,12 @@ $color-inner-shadow: transparentize(#fff, 0.7);
 	$numberSize: floor($innerSize / $piHalf);
 
 	.#{$namespace}-#{$badgeSize} {
-		@include box-shadow(0 #{$borderSize}px #{$borderSizeTimes2}px #{$color-box-shadow}, 0 #{$borderSize}px #{$color-inner-shadow} inset);
+		box-shadow: 0 #{$borderSize}px #{$borderSizeTimes2}px #{$color-box-shadow}, 0 #{$borderSize}px #{$color-inner-shadow} inset;
 		min-width: #{$badgeSize}px;
 		height: #{$badgeSize}px;
 		&, .#{$namespace}-inner {
-			@include border-radius(#{$badgeSizeHalf}px);
-		} 
+			border-radius: #{$badgeSizeHalf}px;
+		}
 		.#{$namespace}-inner {
 			margin: #{$borderSize}px;
 			min-width: #{$innerSize}px;
@@ -128,10 +124,10 @@ $color-inner-shadow: transparentize(#fff, 0.7);
 			right: -#{$positionSize}px;
 		}
 		.#{$namespace}-string {
-			font-size: #{$badgeSizeHalf}px;	
+			font-size: #{$badgeSizeHalf}px;
 		}
 		.#{$namespace}-number {
-			font-size: #{$numberSize}px;	
+			font-size: #{$numberSize}px;
 		}
 
 	}
@@ -151,7 +147,7 @@ $color-inner-shadow: transparentize(#fff, 0.7);
 /* BEGIN themes */
 
 @include create-theme(
-	$themeName: 'red', 
+	$themeName: 'red',
 	$darkColor: $color-red,
 	$lightColor: $color-red-light,
 	$textColor: $color-red-text,

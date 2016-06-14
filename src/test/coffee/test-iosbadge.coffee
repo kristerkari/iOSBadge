@@ -1,33 +1,36 @@
 describe "iOSBadge JS version", ->
-  jasmine.getFixtures().fixturesPath = 'spec/fixtures'
   badge = null
   badgeWithoutNew = null
+  badgeElem = null
+
+  beforeEach ->
+    badgeElem = document.createElement('div')
+    badgeElem.id = 'badge'
+    document.body.appendChild(badgeElem)
+
+  afterEach ->
+    badgeElem.parentNode.removeChild(badgeElem)
 
   describe "when a new instance is created without an element", ->
-    beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById 'badge'
     it "should throw an error if nothing is passed", ->
-      expect(-> badge = new IOSBadge()).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge()).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should throw an error if an empty object is passed", ->
-      expect(-> badge = new IOSBadge({})).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge({})).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should throw an error if a function is passed", ->
-      expect(-> badge = new IOSBadge(->)).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge(->)).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should throw an error if a string is passed", ->
-      expect(-> badge = new IOSBadge('test')).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge('test')).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should throw an error if a number is passed", ->
-      expect(-> badge = new IOSBadge(1)).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge(1)).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should throw an error if null is passed", ->
-      expect(-> badge = new IOSBadge(null)).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge(null)).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should throw an error if undefined is passed", ->
-      expect(-> badge = new IOSBadge(undefined)).toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge(undefined)).toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
     it "should NOT throw an error if an element is passed", ->
-      expect(-> badge = new IOSBadge(badgeElem)).not.toThrow('You need to pass an element as the first argument to iOSBadge')
+      expect(-> badge = new IOSBadge(badgeElem)).not.toThrow(new Error('You need to pass an element as the first argument to iOSBadge'))
 
   describe "when a new instance is created with an element and custom settings", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById 'badge'
       badge = new IOSBadge badgeElem, content: 1, size: 24, namespace: 'test', position: 'top-left', theme: 'green'
       badgeWithoutNew = IOSBadge badgeElem, content: 1, size: 24, namespace: 'test', position: 'top-left', theme: 'green'
     it "should be defined", ->
@@ -61,8 +64,6 @@ describe "iOSBadge JS version", ->
 
   describe "when a new instance is created with an element and without any settings", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
       badgeWithoutNew = IOSBadge(badgeElem)
     it "should be defined", ->
@@ -96,8 +97,6 @@ describe "iOSBadge JS version", ->
 
   describe ".getContent() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.getContent).toBeDefined()
@@ -117,8 +116,6 @@ describe "iOSBadge JS version", ->
 
   describe ".setContent() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.setContent).toBeDefined()
@@ -179,8 +176,6 @@ describe "iOSBadge JS version", ->
 
   describe ".setPosition() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.setPosition).toBeDefined()
@@ -216,8 +211,6 @@ describe "iOSBadge JS version", ->
 
   describe ".setTheme() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.setTheme).toBeDefined()
@@ -248,13 +241,11 @@ describe "iOSBadge JS version", ->
     it "should be able set the theme to 'green'", ->
       badge.setTheme('green')
       expect(badge.theme).toBe('green')
-      expect(badge.badgeInner.className).toContain('iosb-green')  
+      expect(badge.badgeInner.className).toContain('iosb-green')
       expect(badge.setTheme('green')).toBe(badge)
 
   describe ".setSize() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.setSize).toBeDefined()
@@ -281,12 +272,12 @@ describe "iOSBadge JS version", ->
     it "should be able to set size to '24'", ->
       badge.setSize('24')
       expect(badge.size).toBe(24)
-      expect(badge.badgeElem.className).toContain('24') 
+      expect(badge.badgeElem.className).toContain('24')
       expect(badge.setSize('24')).toBe(badge)
     it "should not be able to set size to 'test'", ->
       badge.setSize('test')
       expect(badge.size).toBe(20)
-      expect(badge.badgeElem.className).toContain('20') 
+      expect(badge.badgeElem.className).toContain('20')
       expect(badge.setSize('test')).toBe(badge)
     it "should be able to set size to 24", ->
       badge.setSize(24)
@@ -296,8 +287,6 @@ describe "iOSBadge JS version", ->
 
   describe ".decreaseBy() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.decreaseBy).toBeDefined()
@@ -340,8 +329,6 @@ describe "iOSBadge JS version", ->
 
   describe ".increaseBy() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
     it "should be defined", ->
       expect(badge.increaseBy).toBeDefined()
@@ -384,8 +371,6 @@ describe "iOSBadge JS version", ->
 
   describe ".show() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
       badge.hide()
     it "should be defined", ->
@@ -428,8 +413,6 @@ describe "iOSBadge JS version", ->
 
   describe ".hide() method", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = document.getElementById('badge')
       badge = new IOSBadge(badgeElem)
       badge.show()
     it "should be defined", ->
@@ -471,50 +454,55 @@ describe "iOSBadge JS version", ->
       expect(badge.hide(1)).toBe(badge)
 
 describe "iOSBadge jQuery version", ->
-  jasmine.getFixtures().fixturesPath = 'spec/fixtures'
   badgeElem = null
+  badge = null
+
+  beforeEach ->
+    badge = document.createElement('div')
+    badge.id = 'badge'
+    document.body.appendChild(badge)
+
+  afterEach ->
+    badge.parentNode.removeChild(badge)
 
   describe "when a new instance is created with an element and without any settings", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge').iosbadge()
     it "should have created badgeElem element with default classes", ->
-      expect(badgeElem.children().eq(0)).toBe('div')
+      expect(badgeElem.children().eq(0)).toExist()
       expect(badgeElem.children().eq(0)).toHaveClass('iosb')
       expect(badgeElem.children().eq(0)).toHaveClass('iosb-20')
       expect(badgeElem.children().eq(0)).toHaveClass('iosb-top-right')
     it "should have created badgeInner element with default classes", ->
-      expect(badgeElem.children().children().eq(0)).toBe('div')
+      expect(badgeElem.children().children().eq(0)).toExist()
       expect(badgeElem.children().children().eq(0)).toHaveClass('iosb-inner')
       expect(badgeElem.children().children().eq(0)).toHaveClass('iosb-red')
     it "should have created badgeContent element with default classes and default content", ->
-      expect(badgeElem.children().children().children().eq(0)).toBe('div')
+      expect(badgeElem.children().children().children().eq(0)).toExist()
       expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-content')
       expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
       expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
 
   describe "when a new instance is created with an element and with custom settings", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge').iosbadge content: 1, size: 24, namespace: 'test', position: 'top-left', theme: 'green'
     it "should have created badgeElem element with custom classes", ->
-      expect(badgeElem.children().eq(0)).toBe('div')
+      expect(badgeElem.children().eq(0)).toExist()
       expect(badgeElem.children().eq(0)).toHaveClass('test')
       expect(badgeElem.children().eq(0)).toHaveClass('test-24')
       expect(badgeElem.children().eq(0)).toHaveClass('test-top-left')
     it "should have created badgeInner element with custom classes", ->
-      expect(badgeElem.children().children().eq(0)).toBe('div')
+      expect(badgeElem.children().children().eq(0)).toExist()
       expect(badgeElem.children().children().eq(0)).toHaveClass('test-inner')
       expect(badgeElem.children().children().eq(0)).toHaveClass('test-green')
     it "should have created badgeContent element with custom classes and custom content", ->
-      expect(badgeElem.children().children().children().eq(0)).toBe('div')
+      expect(badgeElem.children().children().children().eq(0)).toExist()
       expect(badgeElem.children().children().children().eq(0)).toHaveClass('test-content')
       expect(badgeElem.children().children().children().eq(0)).toHaveClass('test-number')
       expect(badgeElem.children().children().children().eq(0)).toHaveHtml('1')
 
    describe ".iosbadge({ content: number/'text' }) option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
       badgeElem.iosbadge()
     it "should be able to set content to 1", ->
@@ -545,7 +533,6 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge({ theme: 'text' }) option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
       badgeElem.iosbadge()
     it "should be able to set theme to 'green'", ->
@@ -554,7 +541,6 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge({ position: 'text' }) option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
       badgeElem.iosbadge()
     it "should be able to set position to 'top-left'", ->
@@ -563,7 +549,6 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge({ size: number/'text' }) option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
       badgeElem.iosbadge()
     it "should be able to set size to '24'", ->
@@ -575,7 +560,6 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge({ hide: true }) option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
       badgeElem.iosbadge()
     it "when used, badgeElem should be hidden", ->
@@ -584,7 +568,6 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge({ show: true }) option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
       badgeElem.iosbadge().iosbadge({ hide: true })
     it "when used, badgeElem should be visible", ->
@@ -593,8 +576,7 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge('getContent') option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
-      badgeElem = $('#badge').iosbadge()     
+      badgeElem = $('#badge').iosbadge()
     it "should return a content of 1 if .iosbadge('getContent') is used", ->
       expect(badgeElem.iosbadge('getcontent')).toBe(1)
       expect(badgeElem.children().children().children().eq(0)).toHaveClass('iosb-number')
@@ -610,16 +592,14 @@ describe "iOSBadge jQuery version", ->
 
    describe ".iosbadge('showBadge') option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
-      badgeElem.iosbadge().iosbadge({ hide: true }).iosbadge('showBadge')   
+      badgeElem.iosbadge().iosbadge({ hide: true }).iosbadge('showBadge')
     it "element should be visible", ->
       expect(badgeElem.children(0)).toBeVisible()
 
    describe ".iosbadge('hideBadge') option", ->
     beforeEach ->
-      loadFixtures('test-iosbadge.html')
       badgeElem = $('#badge')
-      badgeElem.iosbadge().iosbadge('hideBadge')   
+      badgeElem.iosbadge().iosbadge('hideBadge')
     it "element should be hidden", ->
       expect(badgeElem.children(0)).toBeHidden()
