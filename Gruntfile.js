@@ -119,10 +119,14 @@ module.exports = function(grunt) {
       }
     },
     sizediff: {
-      all: {
+      css: {
         src: [
           '<%= dirs.distDir %>/<%= pkg.name %>.css',
-          //'<%= dirs.distDir %>/<%= pkg.name %>.min.css',
+          '<%= dirs.distDir %>/<%= pkg.name %>.min.css'
+        ]
+      },
+      js: {
+        src: [
           '<%= dirs.distDir %>/<%= pkg.name %>.js',
           '<%= dirs.distDir %>/<%= pkg.name %>.min.js'
         ]
