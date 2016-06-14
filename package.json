@@ -1,7 +1,7 @@
 {
   "name": "iosbadge",
   "description": "iOS style notification badges for modern browsers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Krister Kari",
     "email": "krister.kari@webtehdas.fi",
